@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Source Code Pro:pixelsize=18:antialias=true:autohint=true";
+static char *font = "SauceCodePro Nerd Font:pixelsize=18:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -193,6 +193,8 @@ static MouseShortcut mshortcuts[] = {
 	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
 	{ ShiftMask,            Button5, ttysend,        {.s = "\033[6;2~"} },
 	{ XK_ANY_MOD,           Button5, ttysend,        {.s = "\005"} },
+    { ShiftMask,            Button5, kscrolldown,    {.i = 1} },
+    { ShiftMask,            Button4, kscrollup,      {.i = 1} },
 };
 
 /* Internal keyboard shortcuts. */
@@ -213,6 +215,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 };
 
 /*
