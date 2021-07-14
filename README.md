@@ -1,3 +1,3 @@
 # st
 
-My personal fork of st
+My personal build of st
